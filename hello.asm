@@ -1,3 +1,8 @@
+;
+;Constants
+;
+SYS_WRITE equ 1
+
 section .data
 	askName db "Enter name",10
 	text db "Hi, "
@@ -27,7 +32,7 @@ _printHi:
 	
 _printHiA:
 
-	mov rax, 1
+	mov rax, SYS_WRITE
 	mov rdi, 1
 	mov rsi, text
 	mov rdx, 4
@@ -35,7 +40,7 @@ _printHiA:
 	ret
 
 _printHiB:
-	mov rax, 1
+	mov rax, SYS_WRITE
 	mov rdi, 1
 	mov rsi, inName
 	mov rdx, 16
@@ -44,7 +49,7 @@ _printHiB:
 
 _printHiC:
 
-	mov rax, 1
+	mov rax, SYS_WRITE
 	mov rdi, 1
 	mov rsi, exc
 	mov rdx, 2
@@ -53,7 +58,7 @@ _printHiC:
 
 _eNameA:
 
-	mov rax, 1
+	mov rax, SYS_WRITE
 	mov rdi, 1
 	mov rsi, askName
 	mov rdx, 11
